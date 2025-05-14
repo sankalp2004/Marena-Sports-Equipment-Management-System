@@ -1,0 +1,102 @@
+<!-- your_template.html -->
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goods List</title>
+    <link rel="stylesheet" href="{% static 'goods/css/second_style.css' %}">
+    <style>
+        body {
+            background-position: top left, center;
+            background-repeat: no-repeat;
+            margin: 0;
+            font-family: 'Arial', sans-serif; /* Change the font to Arial or any other preferred font */
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffffb7;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            background-color: #4CAF50; /* Set a background color for the heading */
+            color: #fff; /* Set text color to white */
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            color: #000; /* Set text color of values in rows and columns to black */
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+
+        .continue-to-dashboard {
+            margin-top: 20px;
+        }
+
+        .continue-to-dashboard a {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Goods List</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item ID</th>
+                    <th>Item Name</th>
+                    <th>Total Quantity</th>
+                    <th>Available Quantity</th>
+                    <th>Issued</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for good in goods %}
+                <tr>
+                    <td>{{ good.item_id }}</td>
+                    <td>{{ good.item_name }}</td>
+                    <td>{{ good.total_quantity }}</td>
+                    <td>{{ good.available_quantity }}</td>
+                    <td>{{ good.issued }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="continue-to-dashboard">
+            <a href="{% url 'dashboard' %}" class="btn btn-primary">Continue to Dashboard</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,219 @@
+body {
+  background-image: url('maheblr.png'), url('maheblurubackground.jpg');
+  background-size: 20%, cover;
+  background-position: top left, center;
+  background-repeat: no-repeat;
+  margin: 0;
+  font-family: 'Lucida Calligraphy', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+.page-container {
+  text-align: center;
+  margin-top: 50px;
+  color: #000; /* Set text color to black */
+}
+
+.form-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  margin: 50px auto;
+  max-width: 400px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.6);
+  color: #000; /* Set text color to black */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin-bottom: 10px;
+  color: #000; /* Set text color to black */
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #000; /* Set text color to black */
+}
+
+button {
+  background-color: #4CAF50;
+  color: #fff; /* Set text color to white */
+  padding: 15px 20px; /* Add padding for a larger button */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.heading-box {
+  background-color: #4CAF50;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  color: #fff; /* Set text color to white */
+}
+
+.page-container.admin-container h1,
+.page-container.maintenance-container h1 {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  display: inline-block;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.remember-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  color: #000; /* Set text color to black */
+  white-space: nowrap; /* Prevent line break */
+}
+
+.cancelbtn {
+  background-color: #f44336;
+  color: #fff; /* Set text color to white */
+}
+
+.psw {
+  float: right;
+  margin-top: 10px;
+  color: #000; /* Set text color to black */
+}
+
+.landing-heading {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  display: inline-block;
+  border-radius: 8px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.6);
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.login-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-container .form-container {
+  width: 80%;
+  padding: 0; /* Remove padding */
+  text-align: center;
+}
+
+
+.login-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-container .form-container {
+  width: 80%;
+  padding: 0; /* Remove padding */
+  text-align: center;
+}
+
+.login-container button {
+  padding: 20px 30px; /* Adjust padding */
+  font-size: 30px; /* Decrease font size */
+   /* Set button color to blue */
+  border: none;
+  color: #080707; /* Set text color to dark */
+}
+
+.login-container .override-button {
+  padding: 20px 30px; /* Adjust padding */
+  font-size: 30px; /* Decrease font size */
+  background-color: #4CAF50; /* Set button color for override button */
+  border: none;
+  color: #fff; /* Set text color to white */
+}
+
+/* Update text for landing page buttons */
+.page-container.admin-container button {
+  font-size: 30px; /* Decrease font size */
+  block-size: 10 px;
+  box-sizing: content-box;
+}
+
+.page-container.maintenance-container button {
+  font-size: 30px; /* Decrease font size */
+}
+
+
+/* Add these rules to position the override button */
+.page-container.admin-container .override-button {
+  float: right;
+}
+
+.page-container.maintenance-container .override-button {
+  float: right;
+}
+
+
+.dashboard-link {
+  text-decoration: none; /* Remove underline */
+  color: #fff; /* Set text color to white */
+}
+
+/* Style the dashboard buttons */
+.dashboard-link button {
+  background-color: #fff; /* Set button color to blue */
+  color: #080707; /* Set text color to dark */
+  padding: 15px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+/* Hover effect for dashboard buttons */
+.dashboard-link button:hover {
+  opacity: 0.8;
+}
+
+.dashboard-container {
+  height: 100vh; /* Set height to 100% of the viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard-header {
+  background-color: rgba(255, 255, 255, 0.8);;
+  padding: 10px;
+  display: inline-block;
+  border-radius: 8px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.6);
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.dashboard-button {
+  padding: 15px 30px; /* Adjust padding for a larger button */
+  font-size: 18px; /* Adjust font size */
+  background-color: #fff; /* Set button color to blue */
+  border: none;
+  color: #0a0a0a; /* Set text color to white */
+  border-radius: 4px;
+  margin-top: 10px; /* Add margin for spacing between buttons */
+}

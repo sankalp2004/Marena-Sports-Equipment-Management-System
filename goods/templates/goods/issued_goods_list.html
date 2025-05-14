@@ -1,0 +1,113 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issued Goods List</title>
+    <link rel="stylesheet" href="{% static 'goods/css/second_style.css' %}">
+    <style>
+        body {
+            background-position: top left, center;
+            background-repeat: no-repeat;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffffb7;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            color: #000;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .continue-to-dashboard {
+            margin-top: 20px;
+        }
+
+        .continue-to-dashboard a {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Issued Goods List</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item ID</th>
+                    <th>Item Name</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Registration Number</th>
+                    <th>Phone Number</th>
+                    <th>Quantity Issued</th>
+                    <th>Date of Issue</th>
+                    <th>Time of Issue</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for issued_good in issued_goods %}
+                <tr>
+                    <td>{{ issued_good.item_id }}</td>
+                    <td>{{ issued_good.item_name }}</td>
+                    <td>{{ issued_good.name }}</td>
+                    <td>{{ issued_good.department }}</td>
+                    <td>{{ issued_good.regno }}</td>
+                    <td>{{ issued_good.phoneno }}</td>
+                    <td>{{ issued_good.no_issued }}</td>
+                    <td>{{ issued_good.date_of_issue }}</td>
+                    <td>{{ issued_good.time_of_issue }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="continue-to-dashboard">
+            <a href="{% url 'dashboard' %}" class="btn btn-primary">Continue to Dashboard</a>
+        </div>
+    </div>
+</body>
+</html>
+

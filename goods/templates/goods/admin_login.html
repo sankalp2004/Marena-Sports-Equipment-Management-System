@@ -1,0 +1,85 @@
+<!-- admin_login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADMIN LOGIN</title>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'goods/css/second_style.css' %}">
+  <script>
+    // Function to save login information to local storage
+    function saveLoginInfo() {
+      const rememberCheckbox = document.getElementById('remember');
+      const unameInput = document.getElementById('uname');
+      const pswInput = document.getElementById('psw');
+  
+      if (rememberCheckbox.checked) {
+        localStorage.setItem('rememberedUname', unameInput.value);
+        localStorage.setItem('rememberedPsw', pswInput.value);
+      } else {
+        localStorage.removeItem('rememberedUname');
+        localStorage.removeItem('rememberedPsw');
+      }
+    }
+  
+    // Function to load login information from local storage
+    function loadLoginInfo() {
+      const unameInput = document.getElementById('uname');
+      const pswInput = document.getElementById('psw');
+      const rememberedUname = localStorage.getItem('rememberedUname');
+      const rememberedPsw = localStorage.getItem('rememberedPsw');
+  
+      if (rememberedUname) {
+        unameInput.value = rememberedUname;
+      }
+  
+      if (rememberedPsw) {
+        pswInput.value = rememberedPsw;
+      }
+    }
+  
+    // Function to clear login form
+    function clearLoginForm() {
+      document.getElementById('uname').value = '';
+      document.getElementById('psw').value = '';
+    }
+  </script>  
+</head>
+<body onload="loadLoginInfo()">
+  <div class="page-container admin-container">
+    <h1>ADMIN LOGIN</h1>
+    <div class="form-container">
+      <form action="{% url 'admin_login_view' %}" method="post" onsubmit="saveLoginInfo()">
+        {% csrf_token %}
+        
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <input type="text" id="uname" placeholder="Enter Username" name="uname" required>
+    
+          <label for="psw"><b>Password</b></label>
+          <input type="password" id="psw" placeholder="Enter Password" name="psw" required>
+    
+          <button type="submit">Login</button>
+    
+          <div class="remember-container">
+            <input type="checkbox" name="remember" id="remember">
+            <label for="remember">Remember me</label>
+          </div>
+        </div>
+
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+          </div>
+        {% endfor %}
+        
+        <div class="container">
+          <button type="button" class="cancelbtn" onclick="clearLoginForm()">Cancel</button>
+          <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!-- myapp/templates/myapp/dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'goods/css/second_style.css' %}">
+    <style>
+        body {
+            background-position: top left, center;
+            background-repeat: no-repeat;
+            margin: 0;
+            font-family: 'Arial', sans-serif; /* Change the font to Arial or any other preferred font */
+            color: #000;
+        }
+
+        .dashboard-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dashboard-header {
+            background-color: rgba(255, 255, 255, 0.8);;
+            padding: 10px;
+            display: inline-block;
+            border-radius: 8px;
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.6);
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .dashboard-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #fff;
+            border: none;
+            color: #0a0a0a;
+            border-radius: 4px;
+            margin-top: 10px;
+            max-width: 100%;
+            }
+
+            .dashboard-button:hover {
+            opacity: 0.8;
+            }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <h1>Welcome to the Dashboard</h1>
+        </div>
+        <!-- Add your 5 buttons here with appropriate links -->
+        <a href="{% url 'issue_equipment' %}"><button class="dashboard-button">Issue Equipment</button></a>
+        <a href="{% url 'return_equipment' %}"><button class="dashboard-button">Return Equipment</button></a>
+        <a href="{% url 'view_available_goods' %}"><button class="dashboard-button">View Available Goods</button></a>
+        <a href="{% url 'view_issued_goods' %}"><button class="dashboard-button">View Issued Goods</button></a>
+        <a href="{% url 'view_student_logs' %}"><button class="dashboard-button">View Student Logs</button></a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!-- landing_page.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'goods/css/second_style.css' %}">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .page-container {
+      text-align: center;
+      margin-top: -25vh; /* Adjust the negative margin to move the content upwards */
+    }
+
+    .landing-heading {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .dashboard-link a {
+      display: block;
+      margin-bottom: 10px;
+      margin-top: 20px;
+    }
+
+    button {
+      font-size: 18px;
+      padding: 15px 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+    <h1 class="landing-heading">MIT Bengaluru Sports Room</h1>
+    <div class="dashboard-link">
+      <a href="{% url 'admin_login_view' %}" class="login-link"><button>Admin Login</button></a>
+      <a href="{% url 'maintenance_login' %}" class="login-link"><button>Maintenance Login</button></a>
+    </div>
+  </div>
+</body>
+</html>

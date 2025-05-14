@@ -1,0 +1,6 @@
+item_id,item_name,total_quantity,available_quantity,issued
+1,Football,3,1,0
+2,Basketball,5,4,0
+3,ChessBoard,1,0,0
+4,Tennis Racket,4,2,0
+5,Cricket Bat,2,2,0

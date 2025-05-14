@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return Equipment</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'goods/css/second_style.css' %}">
+    <style>
+        body {
+            font-family: Arial, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-container">
+    <h2 class="landing-heading">Return Equipment Form</h2>
+    <div class="form-container">
+        <form method="post">
+            
+            {% csrf_token %}
+
+            <div class="container">
+                <!-- Registration Number -->
+                <label for="registration_number" style="margin-bottom: 20px;">Registration Number:</label>
+                <select name="registration_number" id="registration_number">
+                    {% for item in issued_goods %}
+                    <option value="{{ item.regno }}"> {{ item.regno }} , {{item.name}}</option>
+                    {% endfor %}
+                </select>
+
+                <!-- Penalty (optional) -->
+                <label for="penalty" style="margin-top: 20px;">Penalty:</label>
+                <input type="number" name="penalty" id="penalty">
+
+                <!-- Remarks (optional) -->
+                <label for="remarks" style="margin-top: 20px;">Remarks:</label>
+                <textarea name="remarks" id="remarks" rows="4" cols="50"></textarea>
+
+                <!-- Submit Button (does nothing for now) -->
+                <button type="submit" style="margin-top: 20px;" value="Return">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
